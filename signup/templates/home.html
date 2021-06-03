@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup project</title>
+</head>
+
+<body>
+  <h1>Signup Project</h1>
+
+  <div>
+    <a href="{%url 'new'%}">let's signup</a>
+  </div>
+  
+   {% for signup in signups %}
+    <div>
+    <h3>{{signup.name}}</h3>
+    {{blog.id}}
+    {{signup.age}}
+    {{signup.pub_date}}
+    {{signup.email}}
+    {{signup.summary}} <a href="{%url 'detail' signup.id%}">…more</a>
+     </div>
+  {% endfor %}
+
+</body>
+
+</html>
