@@ -36,6 +36,7 @@ def update(request,id):
     update_signup.pub_date = timezone.now()
     update_signup.email = request.POST['email']
     update_signup.introduce = request.POST['introduce']
+    update_signup.image = request.POST['image']
     update_signup.save()
     return redirect ('detail',update_signup.id)
 
@@ -46,3 +47,7 @@ def delete(request,id):
 
 def back(request,id):
     return redirect('home')
+
+def signup(request):
+    signup = Signup.objects
+    return render(request,'home.html',{'signup':signup})
